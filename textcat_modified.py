@@ -10,14 +10,6 @@ For more info about TextCat please check the documentation at:
 
 from nltk.classify.textcat import TextCat
 
-try:
-    TextCat()
-except:
-    import nltk
-#     nltk.set_proxy()
-    nltk.download('crubadan')
-    nltk.download('punkt')
-
 
 ######################################################################
 ## TextCat with extra option
@@ -34,7 +26,13 @@ class TextCat_(TextCat):
         """
         self._languages = languages
         
-        TextCat.__init__(self)
+        try:
+            TextCat.__init__(self)
+        except:
+            import nltk
+            nltk.download('crubadan')
+            nltk.download('punkt')
+            TextCat.__init__(self)
         
         if self._languages:
             
@@ -50,4 +48,3 @@ class TextCat_(TextCat):
             self._corpus._all_lang_freq = {}
             for lang in self._languages:
                 self._corpus.lang_freq(lang)
-            print(self._corpus._all_lang_freq.keys())
