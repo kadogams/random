@@ -1,0 +1,6 @@
+[submodule "textcat_modified"]
+	path = textcat_modified
+	url = https://gist.github.com/kadogams/1d1abac8cc531fac5a3585fbf88fc4ae
+[submodule "detect_language"]
+	path = detect_language
+	url = https://gist.github.com/kadogams/6cf4961bec6ca907eeacb84fcb514968
